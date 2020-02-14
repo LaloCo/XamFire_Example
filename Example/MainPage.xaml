@@ -6,8 +6,11 @@
              mc:Ignorable="d"
              x:Class="Example.MainPage">
     <StackLayout Margin="16,32,16,0">
-        <Label Text="Hello!"/>
-        <Entry />
-        <Button Text="Say hello"/>
+        <Label x:Name="greetingLabel"
+               Text="Hello!"/>
+        <Entry x:Name="nameEntry"
+               Placeholder="Enter your name"/>
+        <Button Clicked="SayHelloButton_Clicked"
+                Text="Say hello"/>
     </StackLayout>
 </ContentPage>
