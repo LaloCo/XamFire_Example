@@ -17,11 +17,5 @@ namespace Example
         {
             InitializeComponent();
         }
-
-        void SayHelloButton_Clicked(Object sender, EventArgs eventArgs)
-        {
-            string userName = nameEntry.Text;
-            greetingLabel.Text = $"Hello {userName}!";
-        }
     }
 }
