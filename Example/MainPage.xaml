@@ -19,7 +19,9 @@
         <Entry x:Name="nameEntry"
                Text="{Binding Username, Mode=TwoWay}"
                Placeholder="Enter your name"/>
-        <Button Text="Clear value"/>
+        <Button Text="Clear value"
+                Command="{Binding ClearCommand}"
+                CommandParameter="{Binding Username}"/>
         <ListView x:Name="exampleListView"
                   Margin="-16,0"
                   ItemsSource="{Binding Contacts}">

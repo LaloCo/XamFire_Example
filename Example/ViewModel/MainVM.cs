@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Windows.Input;
 using Example.Model;
+using Xamarin.Forms;
 
 namespace Example.ViewModel
 {
@@ -30,6 +32,8 @@ namespace Example.ViewModel
             }
         }
 
+        public ICommand ClearCommand { get; set; }
+
         public ObservableCollection<Contact> Contacts { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -47,6 +51,18 @@ namespace Example.ViewModel
                 Name = "Jane",
                 Email = "janedoe@gmail.com"
             });
+
+            ClearCommand = new Command(ClearUsername, ClearCanExecute);
+        }
+
+        private bool ClearCanExecute(object parameter)
+        {
+            return !string.IsNullOrEmpty(Username);
+        }
+
+        private void ClearUsername(object parameter)
+        {
+            Username = string.Empty;
         }
 
         private void OnPropertyChanged(string propertyName)
