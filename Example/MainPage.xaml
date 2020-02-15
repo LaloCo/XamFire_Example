@@ -12,5 +12,14 @@
                Placeholder="Enter your name"/>
         <Button Clicked="SayHelloButton_Clicked"
                 Text="Say hello"/>
+        <ListView x:Name="exampleListView"
+                  Margin="-16,0">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}"
+                              Detail="{Binding Email}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 </ContentPage>
