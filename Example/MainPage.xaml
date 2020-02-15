@@ -3,15 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Example.ViewModel"
              mc:Ignorable="d"
              x:Class="Example.MainPage">
-    <StackLayout Margin="16,32,16,0">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <vm:MainVM x:Key="mainVM"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout BindingContext="{StaticResource mainVM}"
+                 Margin="16,32,16,0">
         <Label x:Name="greetingLabel"
-               Text="Hello!"/>
+               Text="{Binding Greeting}"/>
         <Entry x:Name="nameEntry"
+               Text="{Binding Username, Mode=TwoWay}"
                Placeholder="Enter your name"/>
-        <Button Clicked="SayHelloButton_Clicked"
-                Text="Say hello"/>
+        <Button Text="Clear value"/>
         <ListView x:Name="exampleListView"
                   Margin="-16,0">
             <ListView.ItemTemplate>

@@ -42,11 +42,5 @@ namespace Example
 
             exampleListView.ItemsSource = list;
         }
-
-        void SayHelloButton_Clicked(object sender, EventArgs eventArgs)
-        {
-            string userName = nameEntry.Text;
-            greetingLabel.Text = $"Hello {userName}!";
-        }
     }
 }
