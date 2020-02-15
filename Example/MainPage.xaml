@@ -21,7 +21,8 @@
                Placeholder="Enter your name"/>
         <Button Text="Clear value"/>
         <ListView x:Name="exampleListView"
-                  Margin="-16,0">
+                  Margin="-16,0"
+                  ItemsSource="{Binding Contacts}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding Name}"

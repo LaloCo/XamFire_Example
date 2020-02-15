@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
+using Example.Model;
 
 namespace Example.ViewModel
 {
@@ -28,11 +30,23 @@ namespace Example.ViewModel
             }
         }
 
+        public ObservableCollection<Contact> Contacts { get; set; }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public MainVM()
         {
-            
+            Contacts = new ObservableCollection<Contact>();
+            Contacts.Add(new Contact
+            {
+                Name = "Eduardo",
+                Email = "example@gmail.com"
+            });
+            Contacts.Add(new Contact
+            {
+                Name = "Jane",
+                Email = "janedoe@gmail.com"
+            });
         }
 
         private void OnPropertyChanged(string propertyName)

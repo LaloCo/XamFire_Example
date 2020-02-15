@@ -13,34 +13,9 @@ namespace Example
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
-        public class Contact
-        {
-            public string Name { get; set; }
-            public string Email { get; set; }
-        }
-
         public MainPage()
         {
             InitializeComponent();
-        }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-
-            var list = new List<Contact>();
-            list.Add(new Contact
-            {
-                Name = "Eduardo",
-                Email = "example@gmail.com"
-            });
-            list.Add(new Contact
-            {
-                Name = "Jane",
-                Email = "janedoe@gmail.com"
-            });
-
-            exampleListView.ItemsSource = list;
         }
     }
 }
